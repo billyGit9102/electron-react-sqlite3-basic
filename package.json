@@ -1,5 +1,5 @@
 {
-  "name": "elra-app2",
+  "name": "basic-controll",
   "version": "0.1.0",
   "private": true,
   "main": "src/electron-starter.js",
