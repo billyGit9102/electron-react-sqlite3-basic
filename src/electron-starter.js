@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow,ipcMain} = require('electron')
+const {sqliteControls} = require('./sqlite/controls')
 const path = require('path')
 const url = require('url');
 
@@ -52,6 +53,7 @@ ipcMain.on('content:updated', function(e, text){
   //mainWindow.webContents.send('item:add', item);
   //addWindow.close();
   console.log('node text',text)
+  sqliteControls.update(text);
   // Still have a reference to addWindow in memory. Need to reclaim memory (Grabage collection)
   //addWindow = null;
 });
